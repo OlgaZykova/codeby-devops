@@ -1,0 +1,17 @@
+Script started on 2024-10-10 13:30:49-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ exitjava -versionsudo update-alternatives --config java[25Pjava -versionsudo update-alternatives --config java[25Pjava -versionexit[K[Ksudo systemctl enable  nginx
+[sudo] password for olya: 
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable nginx
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ sudo systemctl enable  nginx[1P[1P[1P[1P[1P[1P[1@d[1@i[1@s[1@a[1@b[1@l[1@e
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install disable nginx
+Removed /etc/systemd/system/multi-user.target.wants/nginx.service.
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ sudo systemctl disable  nginx[1Pen[C[C[C[C[C[C[C[C[C[C[Cexit[Kjava -version[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo cp /lib/systemd/system/nginx.service /lib/systemd/system/new_nginx.service
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ sudo cp /lib/systemd/system/nginx.service /lib/systemd/system/new_nginx.service[A]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ [C[C[C[C[C[14Psystemctl disable  nginx
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pen[C[C[C[C[C[C[C[C[C[C[C[Cnginxenginxwnginx_nginx
+Created symlink /etc/systemd/system/multi-user.target.wants/new_nginx.service → /lib/systemd/system/new_nginx.service.
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ exit
+exit
+
+Script done on 2024-10-10 13:32:42-04:00 [COMMAND_EXIT_CODE="0"]
