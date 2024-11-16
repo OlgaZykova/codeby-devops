@@ -1,0 +1,41 @@
+Script started on 2024-10-10 07:21:57-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ cat java[1Pd[C[C[C[C[Cls[Kjava -version
+openjdk version "11.0.24" 2024-07-16
+OpenJDK Runtime Environment (build 11.0.24+8-post-Ubuntu-1ubuntu320.04)
+OpenJDK 64-Bit Server VM (build 11.0.24+8-post-Ubuntu-1ubuntu320.04, mixed mode, sharing)
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ java -version[5Pcat java[1Pd[C[C[C[C[Cls[Kjava -version-versionsudo update-alternatives --config java
+[sudo] password for olya: 
+There are 3 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+  1            /opt/jdk/jdk-23/bin/java                      100       manual mode
+  2            /opt/jdk/jdk-23/bin/javac                     100       manual mode
+  3            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 1 0
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ sudo update-alternatives --config java[25Pjava -version
+openjdk version "11.0.24" 2024-07-16
+OpenJDK Runtime Environment (build 11.0.24+8-post-Ubuntu-1ubuntu320.04)
+OpenJDK 64-Bit Server VM (build 11.0.24+8-post-Ubuntu-1ubuntu320.04, mixed mode, sharing)
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ java -versionsudo update-alternatives --config java
+There are 3 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+  1            /opt/jdk/jdk-23/bin/java                      100       manual mode
+  2            /opt/jdk/jdk-23/bin/javac                     100       manual mode
+  3            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 1
+update-alternatives: using /opt/jdk/jdk-23/bin/java to provide /usr/bin/java (java) in manual mode
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ sudo update-alternatives --config java[25Pjava -version
+java version "23" 2024-09-17
+Java(TM) SE Runtime Environment (build 23+37-2369)
+Java HotSpot(TM) 64-Bit Server VM (build 23+37-2369, mixed mode, sharing)
+]0;olya@newhostname: ~/Downloads/jdk-23[01;32molya@newhostname[00m:[01;34m~/Downloads/jdk-23[00m$ exit
+exit
+
+Script done on 2024-10-10 07:22:58-04:00 [COMMAND_EXIT_CODE="0"]
