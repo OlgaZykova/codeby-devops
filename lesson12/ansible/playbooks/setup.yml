@@ -1,0 +1,21 @@
+---
+- name: Set up environment
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install wget, htop, and nginx
+      apt:  
+        name:
+          - wget      
+          - htop
+          - nginx    
+        state: present
+        update_cache: yes
+    - name: Start nginx service  
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+    - name: Show environment information  
+      debug:
+        msg: "This host is in {{ ansible_hostname }} environment"
