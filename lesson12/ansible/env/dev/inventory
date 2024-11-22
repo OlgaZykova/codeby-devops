@@ -1,0 +1,10 @@
+all:
+  children:
+    dev:
+      hosts:
+        dev-host:
+          ansible_host: 192.168.56.101
+          ansible_user: vagrant
+          ansible_ssh_private_key_file: /home/olya/codeby-devops/lesson12/.vagrant/machines/dev/virtualbox/private_key
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
