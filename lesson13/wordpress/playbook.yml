@@ -1,0 +1,13 @@
+---
+
+- hosts: ubuntu, centos
+
+  become: true
+
+  roles:
+
+    - mysql
+
+    - apache
+
+

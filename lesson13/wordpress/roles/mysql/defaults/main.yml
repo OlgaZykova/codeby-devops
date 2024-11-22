@@ -1,0 +1,6 @@
+#  mysql-server for ubuntu
+mysql_server_package: "{{ 'mysql-server' if ansible_os_family == 'Debian' else 'mysql-community-server' }}"
+mysql_service_name: "{{ 'mysql' if ansible_os_family == 'Debian' else 'mysqld' }}"
+# CentOS/RHEL
+mysql_yum_repo: "https://repo.mysql.com/mysql80-community-release-el7.rpm"
+# defaults file for roles/mysql
