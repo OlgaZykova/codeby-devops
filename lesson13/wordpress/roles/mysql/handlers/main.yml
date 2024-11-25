@@ -1,0 +1,12 @@
+# roles/mysql/handlers/main.yml
+
+- name: Restart MySQL service
+
+  service:
+
+    name: "{{ mysql_service_name }}"
+
+    state: restarted
+
+  become: yes
+# handlers file for roles/mysql

@@ -1,0 +1,37 @@
+- name: Install Apache
+
+  block:
+
+    - name: Install Apache on Ubuntu
+
+      ansible.builtin.apt:
+
+        name: apache2
+
+        state: present
+
+      when: ansible_os_family == "Debian"
+
+
+
+    - name: Install Apache on CentOS
+
+      ansible.builtin.yum:
+        name: httpd
+
+        state: present
+
+      when: ansible_os_family == "RedHat"
+
+
+    - name: Start Apache service
+
+      ansible.builtin.service:
+
+        name: "{{ apache_service }}"
+
+        state: started
+
+        enabled: true
+
+# tasks file for roles/apache
