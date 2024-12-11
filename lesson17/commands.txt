@@ -1,0 +1,7 @@
+docker network create --driver bridge wp-net
+docker volume create wp-db
+docker run -d --name wp-mysql --network wp-net -v wp-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root_password -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wp_user -e MYSQL_PASSWORD=wp_password mysql:8.0
+docker volume create wp-data
+mkdir -p /opt/for-docker/apache-config
+docker run -d --name wp-wordpress --network wp-net -p 8080:80 -v wp-data:/var/www/html -v /opt/for-docker/apache-config:/etc/apache2/sites-enabled -e WORDPRESS_DB_HOST=wp-mysql:3306 -e WORDPRESS_DB_USER=wp_user -e WORDPRESS_DB_PASSWORD=wp_password -e WORDPRESS_DB_NAME=wordpress wordpress:latest
+docker ps

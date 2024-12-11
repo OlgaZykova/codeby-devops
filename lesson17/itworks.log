@@ -1,0 +1,37 @@
+Script started on 2024-12-11 12:50:28+03:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="131" LINES="28"]
+[?2004h]0;olya@test1: ~/codeby-devops/lesson17[01;32molya@test1[00m:[01;34m~/codeby-devops/lesson17[00m$ [7mdocker exec -it wp-mysql mysql -u root -p[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker exec -it wp-mysql mysql -u root -p
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lEnter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.40 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| wordpress          |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+[?2004h]0;olya@test1: ~/codeby-devops/lesson17[01;32molya@test1[00m:[01;34m~/codeby-devops/lesson17[00m$ ls
+[?2004lcommands.txt  itworks.log  lesson17.log  [0m[01;35mwp.png[0m
+[?2004h]0;olya@test1: ~/codeby-devops/lesson17[01;32molya@test1[00m:[01;34m~/codeby-devops/lesson17[00m$ exit
+[?2004lexit
+
+Script done on 2024-12-11 13:15:51+03:00 [COMMAND_EXIT_CODE="0"]
