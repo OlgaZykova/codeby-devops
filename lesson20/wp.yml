@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress:5.9
+        env:
+        - name: WORDPRESS_DB_USER
+          value: "root"
+        - name: WORDPRESS_DB_HOST
+          value: "mysql.dev.svc.cluster.local:3306"
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-root-password
+        - name: WORDPRESS_DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-database
+        ports:
+        - containerPort: 80
