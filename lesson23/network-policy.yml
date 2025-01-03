@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-mysql-from-wordpress
+  namespace: default  
+spec:
+  podSelector:
+    matchLabels:
+      app: mysql #распространяется на поды с меткой mysql
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: wordpress #можно только с подов с этой меткой
+  policyTypes:
+  - Ingress

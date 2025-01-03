@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: diagnostics-pod
+  namespace: default  
+spec:
+  serviceAccountName: my-service-account  
+  containers:
+  - name: diagnostics-container
+    image: bitnami/kubectl:latest 
+    command:
+      - /bin/sh
+      - -c
+      - |
+        while true; do
+          echo "Checking WordPress Pods...";
+          kubectl get pods -n default -l app=wordpress;  # Фильтрация по метке app=wordpress
+          sleep 60;
+        done
