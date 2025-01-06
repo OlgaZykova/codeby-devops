@@ -1,0 +1,68 @@
+pipeline {
+    agent any
+    stages {
+        stage('Setup') {
+            steps {
+                script {
+                    // Определяем директории приложений
+                    apps = ['hello-world', 'hello-jenkins', 'hello-devops']
+                    changedApps = []
+
+                    // Проверяем изменения
+                    def changedFiles = sh(script: "git diff --name-only HEAD~1..HEAD", returnStdout: true).trim().split('\n')
+                    for (app in apps) {
+                        if (changedFiles.any { it.startsWith("lesson26/${app}") }) {
+                            changedApps.add(app)
+                        }
+                    }
+
+                    // Лог изменений
+                    echo "Changed applications: ${changedApps.join(', ')}"
+                }
+            }
+        }
+
+        stage('Build and Test') {
+            parallel {
+                script {
+                    apps.each { app ->
+                        if (changedApps.contains(app)) {
+                            stage("Build and Test ${app}") {
+                                steps {
+                                    dir("lesson26/${app}") {
+                                        sh 'mvn clean package -DskipTests'
+                                        sh 'mvn test'
+                                    }
+                                }
+                            }
+                        } else {
+                            echo "${app} not changed, skipping build and test."
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            parallel {
+                script {
+                    apps.each { app ->
+                        if (changedApps.contains(app)) {
+                            stage("Deploy ${app}") {
+                                steps {
+                                    dir("lesson26/${app}") {
+                                        sh "echo Deploying ${app}..."
+                                        // Пример команды запуска (если есть исполняемый файл)
+                                        sh 'java -jar target/*.jar &'
+                                    }
+                                }
+                            }
+                        } else {
+                            echo "${app} not changed, skipping deploy."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

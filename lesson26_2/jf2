@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build and Test') {
+            parallel {
+                stage('Build and Test Hello World') {
+                    steps {
+                        dir("lesson26/hello-world") {
+                            sh 'mvn clean package -DskipTests'
+                            sh 'mvn test'
+                        }
+                    }
+                }
+                stage('Build and Test Hello Jenkins') {
+                    steps {
+                        dir("lesson26/hello-jenkins") {
+                            sh 'mvn clean package -DskipTests'
+                            sh 'mvn test'
+                        }
+                    }
+                }
+                stage('Build and Test Hello Devops') {
+                    steps {
+                        dir("lesson26/hello-devops") {
+                            sh 'mvn clean package -DskipTests'
+                            sh 'mvn test'
+                        }
+                    }
+                }
+            }
+        }
+        stage('Deploy') {
+            parallel {
+                stage('Deploy Hello World') {
+                    steps {
+                        dir("lesson26/hello-world") {
+                            sh 'java -jar target/*.jar &'
+                        }
+                    }
+                }
+                stage('Deploy Hello Jenkins') {
+                    steps {
+                        dir("lesson26/hello-jenkins") {
+                            sh 'java -jar target/*.jar &'
+                        }
+                    }
+                }
+                stage('Deploy Hello Devops') {
+                    steps {
+                        dir("lesson26/hello-devops") {
+                            sh 'java -jar target/*.jar &'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
