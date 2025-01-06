@@ -1,0 +1,459 @@
+Push event to branch lesson26_new
+Connecting to https://api.github.com using OlgaZykova/****** (git hub user+pass)
+Jenkins is restricting GitHub API requests only when near or above the rate limit. To configure a different rate limiting strategy, such as having Jenkins attempt to evenly distribute GitHub API requests, go to "GitHub API usage" under "Configure System" in the Jenkins settings.
+Jenkins-Imposed API Limiter: Current quota for Github API usage has 14 remaining (1 over budget). Next quota of 60 in 59 min. Sleeping until reset.
+Jenkins-Imposed API Limiter: Still sleeping, now only 56 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 53 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 50 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 47 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 44 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 41 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 38 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 35 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 32 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 29 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 26 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 23 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 20 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 17 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 14 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 11 min remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 8 min 28 sec remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 5 min 27 sec remaining.
+Jenkins-Imposed API Limiter: Still sleeping, now only 2 min 26 sec remaining.
+Obtained lesson26_2/Jenkinsfile from 7fe972c763aa362b18089994ffba4882ddc8dfed
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on maven-agent in /home/jenkins/workspace/hello-build-new_lesson26_new
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential github-https
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and without tags
+Cloning repository https://github.com/OlgaZykova/codeby-devops.git
+ > git init /home/jenkins/workspace/hello-build-new_lesson26_new # timeout=10
+Fetching upstream changes from https://github.com/OlgaZykova/codeby-devops.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.1'
+using GIT_ASKPASS to set credentials git hub user+pass
+ > git fetch --no-tags --force --progress -- https://github.com/OlgaZykova/codeby-devops.git +refs/heads/lesson26_new:refs/remotes/origin/lesson26_new # timeout=10
+Avoid second fetch
+Checking out Revision 7fe972c763aa362b18089994ffba4882ddc8dfed (lesson26_new)
+ > git config remote.origin.url https://github.com/OlgaZykova/codeby-devops.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/lesson26_new:refs/remotes/origin/lesson26_new # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7fe972c763aa362b18089994ffba4882ddc8dfed # timeout=10
+Commit message: "deleted lesson26 folder"
+ > git rev-list --no-walk 7cbd043275cef2a7bf00771ca0881a5f2514f145 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build and Test)
+[Pipeline] parallel
+[Pipeline] { (Branch: Build and Test Hello World)
+[Pipeline] { (Branch: Build and Test Hello Jenkins)
+[Pipeline] { (Branch: Build and Test Hello Devops)
+[Pipeline] stage
+[Pipeline] { (Build and Test Hello World)
+[Pipeline] stage
+[Pipeline] { (Build and Test Hello Jenkins)
+[Pipeline] stage
+[Pipeline] { (Build and Test Hello Devops)
+[Pipeline] dir
+Running in /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world
+[Pipeline] {
+[Pipeline] dir
+Running in /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins
+[Pipeline] {
+[Pipeline] dir
+Running in /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
+[Pipeline] sh
++ mvn clean package -DskipTests
++ mvn clean package -DskipTests
++ mvn clean package -DskipTests
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ my-app ---
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ my-app ---
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ my-app ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ my-app ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ my-app ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ my-app ---
+[INFO] Building jar: /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops/target/my-app-1.0-SNAPSHOT.jar
+[INFO] Building jar: /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.513 s
+[INFO] Finished at: 2025-01-06T14:56:50Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] sh
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.594 s
+[INFO] Finished at: 2025-01-06T14:56:50Z
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jar: /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.644 s
+[INFO] Finished at: 2025-01-06T14:56:50Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] sh
+[Pipeline] sh
++ mvn test
++ mvn test
++ mvn test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom
+Progress (1): 1.4/4.7 kBProgress (1): 2.8/4.7 kBProgress (1): 4.1/4.7 kBProgress (1): 4.7 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom (4.7 kB at 7.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.5/surefire-providers-3.2.5.pom
+Progress (1): 1.4/2.6 kBProgress (1): 2.6 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.5/surefire-providers-3.2.5.pom (2.6 kB at 49 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.pom
+Progress (1): 1.4/2.8 kBProgress (1): 2.8/2.8 kBProgress (1): 2.8 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.pom (2.8 kB at 63 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar
+Progress (1): 1.4/27 kBProgress (1): 2.8/27 kBProgress (1): 4.1/27 kBProgress (1): 5.5/27 kBProgress (1): 6.9/27 kBProgress (1): 8.3/27 kBProgress (1): 9.7/27 kBProgress (1): 11/27 kB Progress (1): 12/27 kBProgress (1): 14/27 kBProgress (1): 15/27 kBProgress (1): 17/27 kBProgress (1): 18/27 kBProgress (1): 19/27 kBProgress (1): 21/27 kBProgress (1): 22/27 kBProgress (1): 23/27 kBProgress (1): 25/27 kBProgress (1): 26/27 kBProgress (1): 27 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar (27 kB at 394 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar
+Progress (1): 1.4/4.7 kBProgress (1): 2.8/4.7 kBProgress (1): 4.1/4.7 kBProgress (1): 4.7 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom (4.7 kB at 7.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.5/surefire-providers-3.2.5.pom
+Progress (1): 1.4/2.6 kBProgress (1): 2.6 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.5/surefire-providers-3.2.5.pom (2.6 kB at 54 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.pom
+Progress (1): 1.4/2.8 kBProgress (1): 2.8/2.8 kBProgress (1): 2.8 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.pom (2.8 kB at 61 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar
+Progress (1): 1.4/27 kBProgress (1): 2.8/27 kBProgress (1): 4.1/27 kBProgress (1): 5.5/27 kBProgress (1): 6.9/27 kBProgress (1): 8.3/27 kBProgress (1): 9.7/27 kBProgress (1): 11/27 kB Progress (1): 12/27 kBProgress (1): 14/27 kBProgress (1): 15/27 kBProgress (1): 17/27 kBProgress (1): 18/27 kBProgress (1): 19/27 kBProgress (1): 21/27 kBProgress (1): 22/27 kBProgress (1): 23/27 kBProgress (1): 25/27 kBProgress (1): 26/27 kBProgress (1): 27 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar (27 kB at 331 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar
+Progress (1): 1.4/4.7 kBProgress (1): 2.8/4.7 kBProgress (1): 4.1/4.7 kBProgress (1): 4.7 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom (4.7 kB at 8.9 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.pom
+Progress (1): 1.4/3.2 kBProgress (1): 2.8/3.2 kBProgress (1): 3.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.pom (3.2 kB at 62 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.pom
+Progress (1): 1.4/3.2 kBProgress (1): 2.8/3.2 kBProgress (1): 3.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.pom (3.2 kB at 60 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar
+Progress (1): 1.4/18 kBProgress (1): 2.8/18 kBProgress (1): 4.1/18 kBProgress (1): 5.5/18 kBProgress (1): 6.9/18 kBProgress (1): 8.3/18 kBProgress (1): 9.7/18 kBProgress (1): 11/18 kB Progress (1): 12/18 kBProgress (1): 14/18 kBProgress (1): 15/18 kBProgress (1): 17/18 kBProgress (1): 18 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar (18 kB at 274 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.pom
+Progress (1): 1.4/3.2 kBProgress (1): 2.8/3.2 kBProgress (1): 3.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.pom (3.2 kB at 65 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.pom
+Progress (1): 1.4/3.2 kBProgress (1): 2.8/3.2 kBProgress (1): 3.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.pom (3.2 kB at 68 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar
+Progress (1): 16/260 kBProgress (1): 33/260 kBProgress (1): 49/260 kBProgress (1): 65/260 kBProgress (1): 81/260 kBProgress (1): 97/260 kBProgress (1): 114/260 kBProgress (1): 130/260 kBProgress (1): 1.4/18 kBProgress (1): 2.8/18 kBProgress (1): 4.1/18 kBProgress (1): 5.5/18 kBProgress (1): 6.9/18 kBProgress (1): 8.3/18 kBProgress (1): 9.7/18 kBProgress (1): 11/18 kB Progress (1): 12/18 kBProgress (1): 14/18 kBProgress (1): 15/18 kBProgress (1): 17/18 kBProgress (1): 18 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar (18 kB at 270 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.pom
+Progress (1): 1.4/3.2 kBProgress (1): 2.8/3.2 kBProgress (1): 3.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.pom (3.2 kB at 65 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar
+Progress (1): 16/260 kBProgress (1): 32/260 kBProgress (1): 49/260 kBProgress (1): 65/260 kBProgress (1): 81/260 kBProgress (1): 98/260 kBProgress (1): 114/260 kBProgress (1): 131/260 kBProgress (1): 147/260 kBProgress (1): 163/260 kBProgress (1): 180/260 kBProgress (1): 196/260 kBProgress (1): 212/260 kBProgress (1): 229/260 kBProgress (1): 245/260 kBProgress (1): 260 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar (260 kB at 1.9 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar
+Progress (1): 16/260 kBProgress (1): 33/260 kBProgress (1): 49/260 kBProgress (1): 63/260 kBProgress (1): 71/260 kBProgress (1): 87/260 kBProgress (1): 104/260 kBProgress (1): 120/260 kBProgress (1): 128/260 kBProgress (1): 145/260 kBProgress (1): 161/260 kBProgress (1): 177/260 kBProgress (1): 194/260 kBProgress (1): 210/260 kBProgress (1): 226/260 kBProgress (1): 243/260 kBProgress (1): 259/260 kBProgress (1): 260 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar (260 kB at 1.6 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar
+Progress (1): 16/247 kBProgress (1): 32/247 kBProgress (1): 49/247 kBProgress (1): 65/247 kBProgress (1): 81/247 kBProgress (1): 98/247 kBProgress (1): 114/247 kBProgress (1): 131/247 kBProgress (1): 147/247 kBProgress (1): 163/247 kBProgress (1): 180/247 kBProgress (1): 196/247 kBProgress (1): 212/247 kBProgress (1): 229/247 kBProgress (1): 245/247 kBProgress (1): 247 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar (247 kB at 2.8 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar
+Progress (1): 147/260 kBProgress (1): 163/260 kBProgress (1): 179/260 kBProgress (1): 196/260 kBProgress (1): 212/260 kBProgress (1): 228/260 kBProgress (1): 245/260 kBProgress (1): 260 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar (260 kB at 1.8 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar
+Progress (1): 16/247 kBProgress (1): 33/247 kBProgress (1): 49/247 kBProgress (1): 65/247 kBProgress (1): 82/247 kBProgress (1): 98/247 kBProgress (1): 115/247 kBProgress (1): 131/247 kBProgress (1): 147/247 kBProgress (1): 164/247 kBProgress (1): 180/247 kBProgress (1): 197/247 kBProgress (1): 213/247 kBProgress (1): 229/247 kBProgress (1): 246/247 kBProgress (1): 247 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar (247 kB at 3.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.pom (3.0 kB at 64 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar
+Progress (1): 16/189 kBProgress (1): 33/189 kBProgress (1): 49/189 kBProgress (1): 64/189 kBProgress (1): 80/189 kBProgress (1): 97/189 kBProgress (1): 113/189 kBProgress (1): 130/189 kBProgress (1): 146/189 kBProgress (1): 162/189 kBProgress (1): 179/189 kBProgress (1): 189 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar (189 kB at 3.0 MB/s)
+Progress (1): 16/247 kBProgress (1): 32/247 kBProgress (1): 49/247 kBProgress (1): 65/247 kBProgress (1): 78/247 kBProgress (1): 94/247 kBProgress (1): 110/247 kBProgress (1): 127/247 kBProgress (1): 131/247 kBProgress (1): 147/247 kBProgress (1): 164/247 kBProgress (1): 180/247 kBProgress (1): 196/247 kBProgress (1): 213/247 kBProgress (1): 229/247 kBProgress (1): 246/247 kBProgress (1): 247 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar (247 kB at 3.5 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.pom
+Progress (1): 3.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.pom (3.0 kB at 62 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar
+Progress (1): 16/189 kBProgress (1): 33/189 kBProgress (1): 49/189 kBProgress (1): 62/189 kBProgress (1): 79/189 kBProgress (1): 95/189 kBProgress (1): 111/189 kBProgress (1): 128/189 kBProgress (1): 144/189 kBProgress (1): 160/189 kBProgress (1): 177/189 kBProgress (1): 189 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar (189 kB at 3.2 MB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+Progress (1): 16/189 kBProgress (1): 33/189 kBProgress (1): 49/189 kBProgress (1): 64/189 kBProgress (1): 81/189 kBProgress (1): 97/189 kBProgress (1): 113/189 kBProgress (1): 130/189 kBProgress (1): 146/189 kBProgress (1): 163/189 kBProgress (1): 179/189 kBProgress (1): 189 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar (189 kB at 3.0 MB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.mycompany.app.AppTest
+[INFO] Running com.mycompany.app.AppTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in com.mycompany.app.AppTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.411 s
+[INFO] Finished at: 2025-01-06T14:56:59Z
+[INFO] ------------------------------------------------------------------------
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s -- in com.mycompany.app.AppTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.348 s
+[INFO] Finished at: 2025-01-06T14:56:59Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] }
+[INFO] Running com.mycompany.app.AppTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.mycompany.app.AppTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.159 s
+[INFO] Finished at: 2025-01-06T14:56:59Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] parallel
+[Pipeline] { (Branch: Deploy Hello World)
+[Pipeline] { (Branch: Deploy Hello Jenkins)
+[Pipeline] { (Branch: Deploy Hello Devops)
+[Pipeline] stage
+[Pipeline] { (Deploy Hello World)
+[Pipeline] stage
+[Pipeline] { (Deploy Hello Jenkins)
+[Pipeline] stage
+[Pipeline] { (Deploy Hello Devops)
+[Pipeline] dir
+Running in /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-world
+[Pipeline] {
+[Pipeline] dir
+Running in /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-jenkins
+[Pipeline] {
+[Pipeline] dir
+Running in /home/jenkins/workspace/hello-build-new_lesson26_new/lesson26_2/hello-devops
+[Pipeline] {
+[Pipeline] sh
+[Pipeline] sh
+[Pipeline] sh
++ java -jar target/my-app-1.0-SNAPSHOT.jar
+Hello World!
+[Pipeline] }
++ java -jar target/my-app-1.0-SNAPSHOT.jar
+Hello Jenkins!
+[Pipeline] // dir
++ java -jar target/my-app-1.0-SNAPSHOT.jar
+Hello Devops!
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+
+Could not update commit status, please check if your scan credentials belong to a member of the organization or a collaborator of the repository and repo:status scope is selected
+
+
+GitHub has been notified of this commit’s build result
+
+Finished: SUCCESS
