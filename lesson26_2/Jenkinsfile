@@ -30,10 +30,12 @@ pipeline {
             }
         }
         stage('Sonarqube Scan') {
-            dir("lesson26_2/hello-world") {
-                withSonarQubeEnv(cresdentialsId : 'sonar') {
-                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Hello-scan"
-                }                   
+            steps {
+                dir("lesson26_2/hello-world") {
+                    withSonarQubeEnv(cresdentialsId : 'sonar', instalationName : 'sonar') {
+                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Hello-scan"
+                    }                   
+                }
             }
             
         }
