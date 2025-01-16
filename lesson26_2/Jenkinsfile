@@ -32,7 +32,7 @@ pipeline {
         stage('Sonarqube Scan') {
             steps {
                 dir("lesson26_2/hello-world") {
-                    withSonarQubeEnv(cresdentialsId : 'sonar', installationName : 'sonar') {
+                    withSonarQubeEnv(credentialsId" : 'sonar', installationName : 'sonar') {
                         sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Hello-scan"
                     }                   
                 }
