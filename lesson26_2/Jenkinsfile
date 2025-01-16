@@ -29,6 +29,7 @@ pipeline {
                 }
             }
         }
+        #added sonarqube analysis
         stage('Sonarqube Scan') {
             parallel {
                 stage ('Scan hello-world'){
