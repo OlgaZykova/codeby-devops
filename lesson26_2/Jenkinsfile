@@ -29,11 +29,38 @@ pipeline {
                 }
             }
         }
-        //stage('Deliver') {
-          //  steps {
-            //    sh './jenkins/scripts/deliver.sh'
-            //}
-        //}
+        #added sonarqube analysis
+        stage('Sonarqube Scan') {
+            parallel {
+                stage ('Scan hello-world'){
+                    steps {
+                        dir("lesson26_2/hello-world") {
+                            withSonarQubeEnv(credentialsId : 'sonar', installationName : 'sonar') {
+                                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Hello-scan"
+                            }                   
+                        }
+                    }
+                }
+                stage ('Scan hello-jenkins'){
+                    steps {
+                        dir("lesson26_2/hello-jenkins") {
+                            withSonarQubeEnv(credentialsId : 'sonar', installationName : 'sonar') {
+                                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Hello-scan"
+                            }                   
+                        }
+                    }
+                }
+                stage ('Scan hello-devops'){
+                    steps {
+                        dir("lesson26_2/hello-devops") {
+                            withSonarQubeEnv(credentialsId : 'sonar', installationName : 'sonar') {
+                                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Hello-scan"
+                            }                   
+                        }
+                    }
+                }
+            }
+        }
         stage('Deploy') {
             parallel {
                 stage('Deploy Hello World') {
