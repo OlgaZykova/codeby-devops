@@ -29,16 +29,16 @@ jobs:
           cache: 'maven'
 
       - name: Build ${{ matrix.app }} with Maven
-        run: mvn -B package --file ${{ matrix.app }}/pom.xml
+        run: mvn -B package --file lesson26_2/${{ matrix.app }}/pom.xml
 
       - name: Run Tests for ${{ matrix.app }}
-        run: mvn test --file ${{ matrix.app }}/pom.xml
+        run: mvn test --file lesson26_2/${{ matrix.app }}/pom.xml
 
       - name: Upload Artifact for ${{ matrix.app }}
         uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.app }}-jar
-          path: ${{ matrix.app }}/target/*.jar
+          path: lesson26_2/${{ matrix.app }}/target/*.jar
 
   docker:
     name: Build and Push Docker Images
@@ -56,16 +56,15 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: ${{ matrix.app }}-jar
-          path: ${{ matrix.app }}/target/
+          path: lesson26_2/${{ matrix.app }}/target/
 
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Docker Image for ${{ matrix.app }}
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/${{ matrix.app }}:${{ github.ref_name }} -f ${{ matrix.app }}/Dockerfile .
+          docker build -t ghcr.io/${{ github.repository }}/${{ matrix.app }}:${{ github.ref_name }} -f lesson26_2/${{ matrix.app }}/Dockerfile lesson26_2/${{ matrix.app }}
 
       - name: Push Docker Image for ${{ matrix.app }}
         run: |
           docker push ghcr.io/${{ github.repository }}/${{ matrix.app }}:${{ github.ref_name }}
-
